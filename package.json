@@ -1,0 +1,25 @@
+{
+  "name": "cli-genfile",
+  "version": "0.1.0",
+  "description": "auto generate page and component file",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "yanzhen gan",
+  "license": "MIT",
+  "homepage": "https://github.com/livingmore/cli-genfile",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/livingmore/cli-genfile"
+  },
+  "bin": {
+    "genfile": "./cli.js"
+  },
+  "dependencies": {
+    "commander": "^7.2.0"
+  }
+}
