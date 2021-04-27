@@ -73,7 +73,6 @@ function copyDemoToPageName(dirNames, baseDir) {
 
 function _copyFile (sourcePath, targetPath, targetFileName) {
     const sourceFiles = fs.readdirSync(sourcePath);
-    console.log(sourceFiles);
     sourceFiles.forEach(fileName => {
         const sourceFilePath = path.resolve(sourcePath, fileName);
         const ext = fileName.split('.')[1];
