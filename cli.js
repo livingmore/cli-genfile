@@ -13,7 +13,7 @@ const DIRS = {
 }
 
 program
-  .version('0.0.1')
+  .version('0.1.3')
   .option('-p, --page-name <pageName...>', 'page name')
   .option('-c, --component-name <componentName...>', 'component name')
 
@@ -95,18 +95,18 @@ function writeAppConfig(dirNames, baseDir) {
             const newPageRoute = `${DIRS.pages}/${dir}/${targetFileName}`
             if(!appConfig['pages'].includes(newPageRoute)) appConfig['pages'].push(newPageRoute);
         });
-    } else {
-        dirNames.forEach(dir => {
-            const dirs = dir.split('/');
-            const targetFileName = dirs[dirs.length - 1];
+    } 
+    // else {
+    //     dirNames.forEach(dir => {
+    //         const dirs = dir.split('/');
+    //         const targetFileName = dirs[dirs.length - 1];
     
-            if(!appConfig['usingComponents']) {
-                appConfig['usingComponents'] = {};
-            }
-            appConfig['usingComponents'][targetFileName] = `/${DIRS.components}/${dir}/${targetFileName}`;
-        })
-    }
-
+    //         if(!appConfig['usingComponents']) {
+    //             appConfig['usingComponents'] = {};
+    //         }
+    //         appConfig['usingComponents'][targetFileName] = `/${DIRS.components}/${dir}/${targetFileName}`;
+    //     })
+    // }
     fs.writeFileSync(path.join(rootDir, 'app.json'), JSON.stringify(appConfig, null, 2));
 }
 
